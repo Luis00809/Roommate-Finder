@@ -2,6 +2,10 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 
+import HomePage from "./pages/Homepage.jsx";
+import DashBoard from "./pages/Dashboard.jsx";
+import RoomListings from "./pages/RoomListings.jsx";
+import Roommates from "./pages/Roommates.jsx";
 
 const router = createBrowserRouter([
   {
@@ -11,27 +15,19 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <AllCommunities />,
+        element: <HomePage />,
       },
       {
-        path: "/messages/received",
-        element: <Messages />,
+        path: "/dashboard",
+        element: <DashBoard />,
       },
       {
-        path: "/messages/sent",
-        element: <Messages />,
+        path: "/roomlistings",
+        element: <RoomListings />,
       },
       {
-        path: "my-communities",
-        element: <MyCommunities />,
-      },
-      {
-        path: "/communities/:communityId",
-        element: <MyCommunityItems />,
-      },
-      {
-        path: "/hoard/:id",
-        element: <MyHoard />,
+        path: "/roommates",
+        element: <Roommates />,
       },
     ],
   },
